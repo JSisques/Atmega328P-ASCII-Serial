@@ -3,12 +3,12 @@
 .EQU UBRRvalue = clock/(baud * 16) - 1											;Calculamos el valor de UBRR
 
 .ORG 0x0000																		;Posicion de memoria inicial
-	JMP main_routine															
+	JMP main															
 		
 .ORG 0X0032																		;Posicion de memoria donde se encuentran las interrupciones serial
 	JMP USART0_reception_completed												;Saltamos a la funcion cuando se genere la interrupcion
-	JMP USART0_transmit_buffer_empty											;Saltamos a la funcion cuando se genere la interrupcion
-	JMP USART0_byte_transmitted													;Saltamos a la funcion cuando se genere la interrupcion
+//	JMP USART0_transmit_buffer_empty											;Saltamos a la funcion cuando se genere la interrupcion
+//	JMP USART0_byte_transmitted													;Saltamos a la funcion cuando se genere la interrupcion
 
 .ORG 0x0072
 main:
@@ -48,6 +48,7 @@ USART0_reception_completed:
 	LDS R16, UDR0																;Cogemos el byte recivido y hacemos algo con el
 
 	//Procesamos el dato
+	OUT PORTB, R16
 
 	//Finalizamos la interrupcion
 	POP R16
