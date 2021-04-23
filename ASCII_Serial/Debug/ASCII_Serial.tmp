@@ -22,9 +22,9 @@
   <FILE>ASCII_Serial.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <main><FILE>C:\Users\Javi\Documents\Atmel Studio\7.0\ASCII_Serial\ASCII_Serial\main.asm</FILE><LINE>14</LINE></main>
-  <USART0_reception_completed><FILE>C:\Users\Javi\Documents\Atmel Studio\7.0\ASCII_Serial\ASCII_Serial\main.asm</FILE><LINE>43</LINE></USART0_reception_completed>
-  <init_USART0><FILE>C:\Users\Javi\Documents\Atmel Studio\7.0\ASCII_Serial\ASCII_Serial\main.asm</FILE><LINE>28</LINE></init_USART0>
-  <loop><FILE>C:\Users\Javi\Documents\Atmel Studio\7.0\ASCII_Serial\ASCII_Serial\main.asm</FILE><LINE>23</LINE></loop>
+  <main><FILE>C:\Users\Javi\Documents\Atmel Studio\7.0\ASCII_Serial\ASCII_Serial\main.asm</FILE><LINE>17</LINE></main>
+  <USART0_reception_completed><FILE>C:\Users\Javi\Documents\Atmel Studio\7.0\ASCII_Serial\ASCII_Serial\main.asm</FILE><LINE>51</LINE></USART0_reception_completed>
+  <init_USART0><FILE>C:\Users\Javi\Documents\Atmel Studio\7.0\ASCII_Serial\ASCII_Serial\main.asm</FILE><LINE>34</LINE></init_USART0>
+  <loop><FILE>C:\Users\Javi\Documents\Atmel Studio\7.0\ASCII_Serial\ASCII_Serial\main.asm</FILE><LINE>29</LINE></loop>
  </LABELS>
 </ASSEMBLER_INFO>

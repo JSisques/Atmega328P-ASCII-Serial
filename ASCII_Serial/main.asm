@@ -10,8 +10,14 @@
 //	JMP USART0_transmit_buffer_empty											;Saltamos a la funcion cuando se genere la interrupcion
 //	JMP USART0_byte_transmitted													;Saltamos a la funcion cuando se genere la interrupcion
 
+RETI
+RETI
+
 .ORG 0x0072
 main:
+	SER R16
+	OUT DDRB, R16
+
 	LDI R16, HIGH(RAMEND)														;Inicializamos la pila OBLIGATORIO si usamos interrupciones
 	OUT SPH, R16
 	LDI R16, LOW(RAMEND)
@@ -26,17 +32,19 @@ main:
 
 
 init_USART0:																	;Funcion para cargar el valor de UBRR
+	PUSH R16
 	LDI R16, LOW(UBRRvalue)														;Cogemos el valor bajo de la variable UBRRvalue
 	STS UBRR0L, R16																;Cargamos el valor del byte bajo
 	LDI R16, HIGH(UBRRvalue)													;Cogemos el valor alto de la variable UBRRvalue
 	STS UBRR0H, R16																;Cargamos el valor del byte alto
 
 	//Activamos la recepcion y transmision de datos
-	LDI R16, (1 << RXEN0)|(1 << TXEN0)|(1 << UDRIE0)|(1 << TXCIE0)|(1 << RXCIE0)
+	LDI R16, (1 << RXEN0)|(0 << TXEN0)|(0 << UDRIE0)|(0 << TXCIE0)|(1 << RXCIE0)
 	STS UCSR0B, R16																;Asignamos al registro UCSR0B los bits establecidos
 	LDI R16, (0 << UMSEL00)|(1 << UCSZ01)|(1 << UCSZ00)|(0 << USBS0)|(0 << UPM01)|(0 << UPM00)
 	STS UCSR0C, R16																;Asignamos al registro UCSR0C los bits establecidos				
-	
+	POP R16
+
 	RET
 
 //Función de atención a la interrupcion

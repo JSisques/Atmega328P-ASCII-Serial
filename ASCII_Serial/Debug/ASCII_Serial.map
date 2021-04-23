@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\Javi\Documents\Atmel Studio\7.0\ASCII_Serial\ASCII_Serial\main.asm Thu Apr 22 10:59:43 2021
+AVRASM ver. 2.2.8  C:\Users\Javi\Documents\Atmel Studio\7.0\ASCII_Serial\ASCII_Serial\main.asm Fri Apr 23 14:27:18 2021
 
 
 EQU  SIGNATURE_000 0000001e
@@ -699,6 +699,6 @@ EQU  clock        00f42400
 EQU  baud         00002580
 EQU  UBRRvalue    00000067
 CSEG main         00000072
-CSEG USART0_reception_completed 00000087
-CSEG init_USART0  0000007a
-CSEG loop         00000078
+CSEG USART0_reception_completed 0000008b
+CSEG init_USART0  0000007c
+CSEG loop         0000007a
