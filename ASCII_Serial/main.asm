@@ -10,9 +10,6 @@
 //	JMP USART0_transmit_buffer_empty											;Saltamos a la funcion cuando se genere la interrupcion
 //	JMP USART0_byte_transmitted													;Saltamos a la funcion cuando se genere la interrupcion
 
-RETI
-RETI
-
 .ORG 0x0072
 main:
 	SER R16
